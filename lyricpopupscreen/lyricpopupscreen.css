@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+h3 {
+    margin: 0;
+}
+
+button {
+    margin-top: 10px;
+    width: 100px;
+}

@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#manuallyricsbutton, #printbutton {
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3095d8; 
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#manuallyricsbutton {
+    width: fit-content;
+    /*margin-right: auto;*/
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#manuallyricsbutton, #printbutton:hover {
+    background-color: #267db7;
+}
+
+#printbutton:disabled {
+    background-color: #737576; 
+    cursor: not-allowed;
+}
+
+#manuallyricsbutton:disabled {
+    display:none;
+}
+
+#previewcanvas {
+    margin-top: 10px;
+}
+
+#loadingindicator {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 2em;
+}
