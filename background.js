@@ -23,24 +23,26 @@ chrome.runtime.onMessage.addListener((req, sender, callback) => {
  * @returns object containing song data
  */
 function getSongData() {
-    let songDataContainer = document.getElementsByClassName("NXiYChVp4Oydfxd7rT5r")[0];
+    const titleElement = document.getElementsByClassName('encore-text-headline-large')[0];
+    const songDataContainer = titleElement.parentElement.parentElement.parentElement;
+
     let albumImage = songDataContainer.getElementsByTagName("img")[0].src;
     let title = songDataContainer.lastChild.childNodes[1].firstChild.innerText;
 
     let extraInfoContainer = songDataContainer.lastChild.lastChild;
-    let artist = extraInfoContainer.firstChild.lastChild.lastChild.innerText;
-    let albumName = extraInfoContainer.childNodes[1].lastChild.innerText;
-    let year = extraInfoContainer.childNodes[2].innerText;
-    let time = extraInfoContainer.childNodes[3].innerText; 
+    let artist = extraInfoContainer.childNodes[0].lastChild.lastChild.innerText;
+    let albumName = extraInfoContainer.childNodes[2].lastChild.innerText;
+    let year = extraInfoContainer.childNodes[4].innerText;
+    let time = extraInfoContainer.childNodes[6].innerText;
 
     return {
-        title: title,
-        artist: artist,
-        year: year,
-        time: time,
-        albumName: albumName,
-        albumImage, albumImage
-    }
+        title,
+        artist,
+        year,
+        time,
+        albumName,
+        albumImage
+    };
 }
 
 /**
