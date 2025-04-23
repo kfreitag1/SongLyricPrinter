@@ -43,7 +43,9 @@ export const printImageToBluetooth = async (p, img) => {
     try {
         const device = await navigator.bluetooth.requestDevice({
             filters: [
-                { name: "T02" }
+                { name: "T02" },
+                { name: "M02X" },
+                { name: "M02" },
             ],
             optionalServices: [0xFF00, 0xFF02],
         });
